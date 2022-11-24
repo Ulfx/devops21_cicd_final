@@ -12,6 +12,8 @@ repos:
         name: pytest
         stages: [push]
         language: system
-        entry: pytest --cov --cov-fail-under=70
-        types: [python]
+        entry: pytest tests --cov --cov-fail-under=10
         pass_filenames: false
+        always_run: true
+        types: [python]
+        
