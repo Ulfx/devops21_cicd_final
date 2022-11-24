@@ -5,7 +5,7 @@ repos:
         name: pytest
         stages: [commit]
         language: system
-        entry: pytest
+        entry: pytest tests
         types: [python]
       - id: pytest-cov
         name: pytest
