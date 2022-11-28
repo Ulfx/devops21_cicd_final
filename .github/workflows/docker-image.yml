@@ -16,8 +16,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v3
-        push: true
-        tags: ghcr.io/Rockyracoon/devops21_cicd_final/my_flask:${{ github.head_ref }}${{ github.sha }}
+        with:
+          push: true
+          tags: ghcr.io/Rockyracoon/devops21_cicd_final/my_flask:${{ github.head_ref }}${{ github.sha }}
  
 
 
