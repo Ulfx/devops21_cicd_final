@@ -14,3 +14,4 @@ ENV FLASK_APP shop_app
 EXPOSE 5000
 
 CMD [ "flask", "run", "--host=0.0.0.0"]
+
