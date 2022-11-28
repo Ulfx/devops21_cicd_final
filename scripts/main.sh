@@ -1,19 +1,25 @@
 #!/bin/sh
 
-"""checks if the .venv file exist"""
-"""if it doens't it will create a new virtual environment"""
-if [ ! -f /home/usko/repos/devops21_cicd_final/.venv/bin/activate ]
+#sets the path as a variable
+x=$(pwd)
+
+# if the venv does exists then is does nothing
+#if it doesn't it will create a new venv file
+if [[ -d $x/.venv ]] 
 then 
-echo "Exists"
+    echo "Exists"
 else
-python3 -m venv .venv
+    python3 -m venv .venv
+    echo "done installing venv"
 fi
 
-"""activates the virtual environment and then pip installs from requirements.txt"""
-source "/home/usko/repos/devops21_cicd_final/.venv/bin/activate"
+#activates venv and then installs from requirements.txt
+source "$x/.venv/bin/activate"
 pip install -r requirements.txt
 
-"""lastly runs the 2 test scripts in scripts/"""
+#install pre-commit
+pre-commit install 
 
-source "/home/usko/repos/devops21_cicd_final/scripts/db.sh"
-source "/home/usko/repos/devops21_cicd_final/scripts/flask.sh"
+#test runs the scripts promting the user to see if everything is working
+source "$x/scripts/db.sh"
+source "$x/scripts/flask.sh"
