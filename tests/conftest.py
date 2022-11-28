@@ -2,7 +2,6 @@ import pytest
 from shop_app import create_app
 
 
-
 @pytest.fixture(scope='module')
 def test_client():
     flask_app = create_app()
@@ -12,4 +11,3 @@ def test_client():
         # Establish an application context
         with flask_app.app_context():
             yield testing_client  # this is where the testing happens!
-

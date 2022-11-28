@@ -9,11 +9,18 @@ repos:
         pass_filenames: false
         always_run: true
       - id: pytest-cov
-        name: pytest
+        name: pytest covrage
         stages: [commit]
         language: system
         entry: pytest tests --cov --cov-fail-under=50
         pass_filenames: false
         always_run: true
         types: [python]
-        
+      - id: flake8
+        name: flake8
+        stages: [commit]
+        language: system
+        entry: flake8
+        pass_filenames: false
+        always_run: true
+        types: [python]
