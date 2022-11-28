@@ -15,11 +15,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
- 
-    run: |
-          docker build . --tag ghcr.io/Rockyraccoon/devops21_cicd_final/my_flask:${{ github.head_ref }}${{ github.sha }}
-          docker run ghcr.io/Rockyraccoon/my_flask:${{ github.head_ref }}${{ github.sha }}
-          docker push ghcr.io/Rockyraccoon/my_flask:${{ github.head_ref }}${{ github.sha }}
+
+       - name: Build docker image and push
+        run: |
+              docker build . --tag ghcr.io/Rockyraccoon/devops21_cicd_final/my_flask:${{ github.head_ref }}${{ github.sha }}
+              docker run ghcr.io/Rockyraccoon/my_flask:${{ github.head_ref }}${{ github.sha }}
+              docker push ghcr.io/Rockyraccoon/my_flask:${{ github.head_ref }}${{ github.sha }}
 
 
 
