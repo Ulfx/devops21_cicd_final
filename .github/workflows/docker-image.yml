@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/ulfx/devops21_cicd_final/my_flask:$(GIT_BRANCH)$(GIT_SHA)
+          tags: ghcr.io/rockyraccooner/devops21_cicd_final/my_flask:${GIT_BRANCH)$(GIT_SHA)
  
 
 
