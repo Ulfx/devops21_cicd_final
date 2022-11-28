@@ -6,7 +6,6 @@ on:
 
 jobs:
   build-and-push-docker-image
-    name: build docker image and push to repositories
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2

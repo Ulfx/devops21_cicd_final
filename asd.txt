@@ -22,3 +22,4 @@
           context: .
           tags: |
           $ {{ github.head_ref }}${{ github.sha }}
+asdasd
