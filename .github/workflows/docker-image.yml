@@ -5,22 +5,22 @@ on:
     branches: [ "feature-*" ]
 
 jobs:
-  build-and-push-docker-image
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
+build-and-push-docker-image
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v2
     
-    - name: Login to Github Container Registry
-    uses: docker/login-actionv1
-    with:
-    registry: ghcr.io
-    username: ${{ github.actor }}
-    password: ${{ secrets.GITHUB_TOKEN }}
-    - name: Build and push docker image
-    run: |
-           docker build . --tag ghcr.io/Rockyraccoon/devops21_cicd_final/my_flask:${{ github.head_ref }}${{ github.sha }}
-           docker run ghcr.io/Rockyraccoon/my_flask:${{ github.head_ref }}${{ github.sha }}
-           docker push ghcr.io/Rockyraccoon/my_flask:${{ github.head_ref }}${{ github.sha }}
+- name: Login to Github Container Registry
+uses: docker/login-actionv1
+with:
+registry: ghcr.io
+username: ${{ github.actor }}
+password: ${{ secrets.GITHUB_TOKEN }}
+- name: Build and push docker image
+run: |
+        docker build . --tag ghcr.io/Rockyraccoon/devops21_cicd_final/my_flask:${{ github.head_ref }}${{ github.sha }}
+        docker run ghcr.io/Rockyraccoon/my_flask:${{ github.head_ref }}${{ github.sha }}
+        docker push ghcr.io/Rockyraccoon/my_flask:${{ github.head_ref }}${{ github.sha }}
 
 
 
