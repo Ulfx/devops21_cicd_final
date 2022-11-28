@@ -7,6 +7,8 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+    - name: Extract branch name
+
       - run: echo "Deploying to $GITHUB_REF"      
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
@@ -18,7 +20,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/ulfx/devops21_cicd_final/my_flask:${{github.ref}}${{github.sha}}
+          tags: ghcr.io/ulfx/devops21_cicd_final/my_flask:${{git name-rev --name-only HEAD}}${{github.sha}}
  
 
 
