@@ -10,9 +10,9 @@ repos:
         always_run: true
       - id: pytest-cov
         name: pytest
-        stages: [push]
+        stages: [commit]
         language: system
-        entry: pytest tests --cov --cov-fail-under=60
+        entry: pytest tests --cov --cov-fail-under=50
         pass_filenames: false
         always_run: true
         types: [python]
