@@ -19,7 +19,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/ulfx/devops21_cicd_final/my_flask:${{GITHUB_REF}}${{github.sha}}
+          tags: ghcr.io/ulfx/devops21_cicd_final/my_flask:${{github.ref}}${{github.sha}}
  
 
 
