@@ -4,6 +4,7 @@
 from flask import Flask
 from shop_app import db
 
+
 def create_app():
     """Factory method that is automatically called by flask run,
     responsible for settings up routes and the database connection
