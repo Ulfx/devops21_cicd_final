@@ -5,9 +5,11 @@ on:
     workflows: [Python application] 
     types: [completed]
     branches: [main]
-jobs:    
+
+jobs:   
   docker:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }} 
     steps:
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
