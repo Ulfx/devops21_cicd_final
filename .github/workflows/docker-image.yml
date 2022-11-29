@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   workflow_run:
-    workflows: [ Python application ] 
-    branches: [ "feature-*" ]
-    types: [completed]
+    workflows: [Python application] 
+    types:
+      - completed
 jobs:    
   docker:
     runs-on: ubuntu-latest
