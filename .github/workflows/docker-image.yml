@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: [Python application] 
     types: [completed]
-    branches: [features-*]
+    branches: [feature-*]
 jobs:    
   docker:
     runs-on: ubuntu-latest
