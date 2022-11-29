@@ -3,8 +3,8 @@ name: Docker Image CI
 on:
   workflow_run:
     workflows: [Python application] 
-    types:
-      - completed
+    types: [completed]
+    branches: [features-*]
 jobs:    
   docker:
     runs-on: ubuntu-latest
