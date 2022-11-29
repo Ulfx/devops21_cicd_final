@@ -1,25 +1,14 @@
-name: Docker Image CI Branch
+name: Docker Image CI Main
 
 on:
   workflow_run:
     workflows: [Python application] 
     types: [completed]
-    branches: [features-*]
+    branches: [main]
 jobs:    
   docker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: benjlevesque/short-sha@v2.1
-        id: short-sha
-        with:
-          length: 6
-      - run: echo $SHA
-        env:
-          SHA: ${{ steps.short-sha.outputs.sha }}
-      - run: echo $SHA
-        env:
-          SHA: ${{ env.SHA }}
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
         with:
@@ -30,7 +19,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/ulfx/devops21_cicd_final/my_flask:${{github.ref_name}}${{steps.short-sha.outputs.sha}}
+          tags: ghcr.io/ulfx/devops21_cicd_final/my_flask:latest
  
 
 
