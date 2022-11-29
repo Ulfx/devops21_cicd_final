@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  workflow_run:
+    workflows: [Python application] 
+    types: [completed]
+    branches: [main]
+jobs:    
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: ghcr.io/ulfx/devops21_cicd_final/my_flask:latest
+ 
+
+
+
