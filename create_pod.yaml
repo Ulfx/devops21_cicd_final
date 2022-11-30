@@ -9,5 +9,12 @@ spec:
   containers:
     - name: my-flask
       image: ghcr.io/ulfx/devops21_cicd_final/my_flask:latest
+      env: # Sätt databasens host i flask till servicenamnet
+        - name: MYSQL_HOST
+          value: mysql-service
+      envFrom: # Ladda password OBS! separera root password i separat secret i en prod miljö
+        - secretRef:
+            name: mysqldb-secrets
+
   imagePullSecrets:
     - name: regcred
