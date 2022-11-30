@@ -24,10 +24,9 @@ def create_app():
     db.init_app(app)
 
     # pylint: disable-next=C0415
-    from . import profile, product, auth, coolfunc
+    from . import profile, product, auth
     app.register_blueprint(auth.bp)
     app.register_blueprint(profile.bp)
     app.register_blueprint(product.bp)
-    app.register_blueprint(coolfunc.bp)
 
     return app
