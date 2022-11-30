@@ -1,5 +1,3 @@
-import requests
-
 """
 def test_start(config):
   response = requests.get(f'{config.base_url}/product', timeout=config.TIMEOUT)
