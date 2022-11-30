@@ -1,4 +1,3 @@
-from flask import Flask
 from shop_app import create_app
 
 
