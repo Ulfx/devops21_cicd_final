@@ -12,7 +12,7 @@
 
 Make sure you have docker, python and minikube installed.
 
-cd into repo root and run source `./scripts/main.sh`
+cd into repo root and run `source ./scripts/main.sh`
 
 
 ## How to deploy
