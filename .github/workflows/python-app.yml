@@ -48,7 +48,7 @@ jobs:
         pytest --junitxml=pytest-cov/pytest.xml --cov-report=term-missing:skip-covered --cov=app tests/ | tee pytest-cov/pytest-coverage.txt
 
     - name: Pytest coverage comment
-      uses: ulfx/devops21_cicd_final@main
+      uses: MishaKav/pytest-coverage-comment@main
       with:
         pytest-coverage-path: pytest-cov/pytest-coverage.txt
         junitxml-path: pytest-cov/pytest.xml
