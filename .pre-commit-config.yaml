@@ -12,7 +12,7 @@ repos:
         name: pytest covrage
         stages: [commit]
         language: system
-        entry: pytest tests --cov --cov-fail-under=55
+        entry: pytest tests --cov --cov-fail-under=54
         pass_filenames: false
         always_run: true
         types: [python]
