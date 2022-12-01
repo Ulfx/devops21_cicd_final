@@ -147,3 +147,7 @@ Temporary Items
 
 # pdf
 *.pdf
+
+#random text
+password.txt
+user-password.txt
